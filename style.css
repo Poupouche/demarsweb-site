@@ -55,6 +55,8 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Tout le site est en rem : cette ligne règle l'échelle d'ensemble, en restant relative au réglage du visiteur. */
+  font-size: 87.5%;
 }
 
 body {
@@ -662,6 +664,22 @@ kbd {
 
 .date {
   color: var(--gris);
+}
+
+.commencer {
+  max-width: 46rem;
+  padding-left: 1.75rem;
+  font-size: 1.125rem;
+}
+
+.commencer li {
+  margin-bottom: 1rem;
+  padding-left: 0.25rem;
+}
+
+.commencer-suite {
+  margin-top: 1.5rem;
+  font-weight: 700;
 }
 
 .a-completer {
