@@ -1,0 +1,215 @@
+/* Demars Web — feuille de style unique.
+   Thème clair par défaut, thème sombre selon le réglage du système.
+   Aucune police, image ni ressource chargée depuis un autre site. Aucune animation. */
+
+:root {
+  color-scheme: light dark;
+  --fond: #ffffff;
+  --texte: #1b1d21;
+  --doux: #4b5260;
+  --accent: #0b57a4;
+  --sur-accent: #ffffff;
+  --bordure: #d5d9e0;
+  --focus: #1b1d21;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #14171c;
+    --texte: #eceef1;
+    --doux: #b4bac4;
+    --accent: #8cbcf5;
+    --sur-accent: #14171c;
+    --bordure: #3a404a;
+    --focus: #eceef1;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Lien d'évitement : hors de l'écran tant qu'il n'a pas le focus. */
+.evitement {
+  position: absolute;
+  top: -10rem;
+  left: 1rem;
+  z-index: 1;
+  padding: 0.5rem 0.75rem;
+  background: var(--fond);
+  color: var(--accent);
+}
+
+.evitement:focus {
+  top: 0.5rem;
+}
+
+/* Liens : toujours soulignés, pour être reconnus sans la couleur. */
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 0.0625em;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.125em;
+}
+
+/* Focus toujours visible, dans les deux thèmes. */
+a:focus,
+a:focus-visible {
+  outline: 0.1875rem solid var(--focus);
+  outline-offset: 0.125rem;
+}
+
+/* Page en cours : en gras, soulignement épais, et aria-current dans le code. */
+a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration-thickness: 0.15em;
+}
+
+.entete {
+  padding: 1.25rem 0 1rem;
+  border-bottom: 0.0625rem solid var(--bordure);
+}
+
+.marque {
+  margin: 0;
+  color: var(--doux);
+}
+
+.marque a {
+  color: var(--texte);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+main {
+  padding: 2rem 0 2.5rem;
+}
+
+h1,
+h2 {
+  line-height: 1.25;
+  color: var(--texte);
+}
+
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: 1.875rem;
+}
+
+h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1.375rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1rem;
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Le seul élément mis en avant : le lien vers le premier relevé gratuit. */
+.appel {
+  margin: 1.75rem 0 0.5rem;
+}
+
+.bouton {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border: 0.125rem solid var(--accent);
+  border-radius: 0.375rem;
+  background: var(--accent);
+  color: var(--sur-accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.bouton:hover {
+  text-decoration: underline;
+}
+
+.a-completer {
+  color: var(--doux);
+}
+
+.pied {
+  padding: 1.5rem 0 2rem;
+  border-top: 0.0625rem solid var(--bordure);
+  color: var(--doux);
+  font-size: 0.9375rem;
+}
+
+.pied p {
+  margin-bottom: 0.75rem;
+}
+
+.pied ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pied li {
+  display: inline-block;
+  margin: 0 1rem 0.5rem 0;
+}
+
+@media (min-width: 40em) {
+  .page {
+    padding: 0 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  main {
+    padding-top: 3rem;
+  }
+}
+
+/* Aucune animation sur ce site ; par précaution, rien ne bouge si le système demande de réduire les animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
