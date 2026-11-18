@@ -666,6 +666,11 @@ kbd {
   color: var(--gris);
 }
 
+/* Plan du site : listes imbriquées, sans marge en trop. */
+.plan ul {
+  margin: 0.5rem 0 0;
+}
+
 .commencer {
   max-width: 46rem;
   padding-left: 1.75rem;

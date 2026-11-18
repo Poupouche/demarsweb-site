@@ -57,13 +57,13 @@
 <p>Le carrousel d’images défilait tout seul, sans moyen de l’arrêter. Au clavier, c’était un piège&nbsp;: une fois entré dedans, on n’atteignait plus le reste de la page. Il a maintenant un bouton «&nbsp;Mettre le carrousel en pause&nbsp;», et le clavier le traverse normalement.</p>
 <p>Les pastilles «&nbsp;-20&nbsp;%&nbsp;» et «&nbsp;Neuf&nbsp;», en texte blanc sur orange clair et bleu clair, étaient difficiles à lire&nbsp;: leurs couleurs ont été foncées.</p>
 <div class="images">
-  <figure>
+  <figure role="figure" aria-label="Avant">
     <figcaption>Avant</figcaption>
-    <img src="images/accueil-avant.webp" width="760" height="543" alt="Avant : le haut de l’accueil de la boutique de test. Le carrousel n’a aucun bouton de pause. Les pastilles « -20 % » et « Neuf » des produits sont orange clair et bleu clair, avec un texte blanc peu lisible.">
+    <img src="images/accueil-avant.webp" width="760" height="543" alt="Avant : accueil de la boutique, carrousel sans bouton de pause, pastilles pâles">
   </figure>
-  <figure>
+  <figure role="figure" aria-label="Après">
     <figcaption>Après</figcaption>
-    <img src="images/accueil-apres.webp" width="760" height="543" alt="Après : le même écran. Un bouton « Mettre le carrousel en pause » apparaît en haut à droite du carrousel. Les pastilles « -20 % » et « Neuf » sont orange foncé et bleu-vert foncé, et leur texte blanc se lit mieux.">
+    <img src="images/accueil-apres.webp" width="760" height="543" alt="Après : bouton « Mettre le carrousel en pause » ajouté, pastilles plus foncées">
   </figure>
 </div>
 </section>
@@ -72,13 +72,13 @@
 <p>Deux défauts bloquaient l’achat avec un lecteur d’écran. Les boutons «&nbsp;+&nbsp;» et «&nbsp;−&nbsp;» de la quantité n’avaient pas de nom&nbsp;: le lecteur d’écran annonçait «&nbsp;bouton&nbsp;», sans plus. Ils s’appellent maintenant «&nbsp;Augmenter la quantité&nbsp;» et «&nbsp;Diminuer la quantité&nbsp;». Les onglets «&nbsp;Description&nbsp;» et «&nbsp;Détails du produit&nbsp;» étaient mal construits pour les lecteurs d’écran (deux défauts bloquants et un gênant, de même cause)&nbsp;; leur structure a été reprise dans le gabarit de la fiche.</p>
 <p>Au clavier, le bouton «&nbsp;favori&nbsp;» (le cœur) et les pastilles de couleur ne montraient pas où était le focus&nbsp;: ils ont maintenant un contour visible. À l’écran, ce qui change surtout, ce sont le bouton «&nbsp;Ajouter au panier&nbsp;», le prix et les pastilles de réduction, plus foncés pour être lisibles.</p>
 <div class="images">
-  <figure>
+  <figure role="figure" aria-label="Avant">
     <figcaption>Avant</figcaption>
-    <img src="images/fiche-produit-avant.webp" width="760" height="692" alt="Avant : la fiche d’un t-shirt. Le bouton « Ajouter au panier » est bleu clair ; le prix réduit et la pastille « Économisez 20 % » sont orange clair. Leurs textes sont peu contrastés.">
+    <img src="images/fiche-produit-avant.webp" width="760" height="692" alt="Avant : fiche produit, bouton « Ajouter au panier » et prix réduit pâles">
   </figure>
-  <figure>
+  <figure role="figure" aria-label="Après">
     <figcaption>Après</figcaption>
-    <img src="images/fiche-produit-apres.webp" width="760" height="692" alt="Après : la même fiche. Le bouton « Ajouter au panier » est bleu-vert foncé ; le prix et la pastille « Économisez 20 % » sont orange foncé. Les noms donnés aux boutons + et − et la nouvelle structure des onglets ne se voient pas : ils servent au lecteur d’écran.">
+    <img src="images/fiche-produit-apres.webp" width="760" height="692" alt="Après : même fiche, bouton « Ajouter au panier » et prix réduit plus foncés">
   </figure>
 </div>
 </section>
@@ -87,13 +87,13 @@
 <p>Les boutons «&nbsp;+&nbsp;» et «&nbsp;−&nbsp;» du panier avaient le même défaut que ceux de la fiche produit, avec la même cause&nbsp;: le script du thème qui les crée. Une seule correction règle les deux pages. Le bouton «&nbsp;Commander&nbsp;», blanc sur bleu clair, était difficile à lire.</p>
 <p>Juste avant le panier, quand on ajoute un produit, une fenêtre de confirmation s’ouvre. À sa fermeture, le focus ne revenait pas sur le bouton «&nbsp;Ajouter au panier&nbsp;»&nbsp;: la personne au clavier perdait sa place. Il y revient maintenant.</p>
 <div class="images">
-  <figure>
+  <figure role="figure" aria-label="Avant">
     <figcaption>Avant</figcaption>
-    <img src="images/panier-avant.webp" width="760" height="339" alt="Avant : le panier, avec un t-shirt. Le bouton « Commander » est blanc sur bleu clair ; la pastille « -20 % » est orange clair.">
+    <img src="images/panier-avant.webp" width="760" height="339" alt="Avant : panier, bouton « Commander » blanc sur bleu clair, peu lisible">
   </figure>
-  <figure>
+  <figure role="figure" aria-label="Après">
     <figcaption>Après</figcaption>
-    <img src="images/panier-apres.webp" width="760" height="339" alt="Après : le même panier. Le bouton « Commander » est blanc sur bleu-vert foncé ; la pastille « -20 % » est orange foncé. Les noms des boutons + et − de la quantité ne se voient pas : ils servent au lecteur d’écran.">
+    <img src="images/panier-apres.webp" width="760" height="339" alt="Après : même panier, bouton « Commander » blanc sur bleu-vert foncé">
   </figure>
 </div>
 </section>
@@ -102,13 +102,13 @@
 <p>Les liens placés dans le texte, comme «&nbsp;Se déconnecter&nbsp;», ne se distinguaient que par leur couleur, un bleu clair&nbsp;: ils sont maintenant soulignés, et plus foncés.</p>
 <p>Dans les formulaires de la commande et du compte, sept champs avaient un message d’erreur ni relié au champ, ni annoncé. Chaque message est maintenant relié à son champ, et le focus va sur le premier champ en erreur. Neuf champs personnels indiquent aussi au navigateur ce qu’ils attendent, pour le remplissage automatique.</p>
 <div class="images">
-  <figure>
+  <figure role="figure" aria-label="Avant">
     <figcaption>Avant</figcaption>
-    <img src="images/commande-avant.webp" width="760" height="326" alt="Avant : la première étape de la commande, « Informations personnelles ». Les liens « Camille Parcours » (le client de test) et « Se déconnecter » sont bleu clair, sans soulignement ; le bouton « Continuer » est blanc sur bleu clair.">
+    <img src="images/commande-avant.webp" width="760" height="326" alt="Avant : commande, liens bleu clair non soulignés, bouton « Continuer » pâle">
   </figure>
-  <figure>
+  <figure role="figure" aria-label="Après">
     <figcaption>Après</figcaption>
-    <img src="images/commande-apres.webp" width="760" height="326" alt="Après : la même étape. Les deux liens sont soulignés et plus foncés ; le bouton « Continuer » est blanc sur bleu-vert foncé.">
+    <img src="images/commande-apres.webp" width="760" height="326" alt="Après : même étape, liens soulignés et plus foncés, bouton plus foncé">
   </figure>
 </div>
 </section>
@@ -143,6 +143,7 @@
       <li><a href="/mentions-legales">Mentions légales</a></li>
       <li><a href="/confidentialite">Confidentialité</a></li>
       <li><a href="/accessibilite">Accessibilité</a></li>
+      <li><a href="/plan-du-site">Plan du site</a></li>
     </ul>
   </nav>
 </footer>

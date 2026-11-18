@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Accessibilité — Demars Web</title>
-<meta name="description" content="Accessibilité du site demarsweb.fr : ce qui a été vérifié et les limites.">
+<title>Déclaration d’accessibilité — Demars Web</title>
+<meta name="description" content="Déclaration d’accessibilité du site demarsweb.fr : état, résultats des tests, environnement de test, contact et voies de recours.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css">
 <script src="contact.js" defer></script>
@@ -28,28 +28,83 @@
 </div>
 
 <main id="contenu" class="page-texte conteneur">
-<h1>Accessibilité de ce site</h1>
+<h1>Déclaration d’accessibilité</h1>
 
-<p>Ce site est fait pour être utilisable par tous&nbsp;: au clavier, avec un lecteur d’écran, avec un agrandissement de 200&nbsp;%, sur un petit écran.</p>
+<p>Demars Web s’engage à rendre son site internet accessible. Cette déclaration d’accessibilité s’applique au site demarsweb.fr.</p>
 
-<h2>Ce qui a été vérifié (le <time datetime="2026-11-18">18&nbsp;novembre 2026</time>)</h2>
+<h2>État de conformité</h2>
+<p>L’état de conformité de demarsweb.fr au référentiel général d’amélioration de l’accessibilité (RGAA), version&nbsp;4.1.2, sera indiqué ici après la vérification avec un lecteur d’écran. L’audit interne décrit ci-dessous ne relève aucun défaut.</p>
+
+<h2>Résultats des tests</h2>
+<p>L’audit réalisé en interne par Demars Web le <time datetime="2026-11-18">18&nbsp;novembre 2026</time> révèle que <strong>100&nbsp;% des critères du RGAA sont respectés</strong>&nbsp;: 48 critères respectés sur 48 critères applicables. Les 58 autres critères ne s’appliquent pas à ce site (il n’a ni cadre, ni vidéo, ni son, ni formulaire, par exemple).</p>
+<p>Le taux moyen de conformité du site, calculé page par page, s’élève à 100&nbsp;%.</p>
+<p>Méthode&nbsp;: les 106&nbsp;critères et leurs tests ont été examinés sur chacune des dix pages du site, par la lecture du code et par des relevés scriptés. Les tests qui demandent l’écoute d’un lecteur d’écran ont été jugés d’après le code&nbsp;; leur vérification avec NVDA est prévue.</p>
+
+<h2>Contenus non accessibles</h2>
+
+<h3>Non-conformités</h3>
+<p>Aucune non-conformité connue à la date de l’audit.</p>
+<p>Sur la page «&nbsp;Avant / après&nbsp;», les captures d’écran «&nbsp;avant&nbsp;» montrent volontairement des textes peu lisibles&nbsp;: c’est l’état de la boutique de test avant ses corrections. Ce qu’elles montrent est dit par leur texte de remplacement et par le texte de la page.</p>
+
+<h3>Dérogations pour charge disproportionnée</h3>
+<p>Aucune.</p>
+
+<h3>Contenus non soumis à l’obligation d’accessibilité</h3>
+<p>Aucun.</p>
+
+<h2>Établissement de cette déclaration</h2>
+<p>Cette déclaration a été établie le <time datetime="2026-11-18">18&nbsp;novembre 2026</time>.</p>
+
+<h3>Technologies utilisées pour la réalisation du site</h3>
 <ul>
-  <li>un relevé automatique de chaque page (axe-core)&nbsp;;</li>
-  <li>un parcours au clavier de chaque page, par un outil automatique&nbsp;;</li>
-  <li>l’affichage à 320&nbsp;pixels de large et avec un agrandissement du texte de 200&nbsp;%.</li>
+  <li>HTML5&nbsp;;</li>
+  <li>CSS&nbsp;;</li>
+  <li>JavaScript (un seul script, qui affiche l’adresse de contact).</li>
 </ul>
 
-<h2>Ce qui n’a pas encore été vérifié</h2>
+<h3>Environnement de test</h3>
+<p>Agents utilisateurs, technologies d’assistance et outils utilisés pour vérifier l’accessibilité&nbsp;:</p>
 <ul>
-  <li>la lecture avec un lecteur d’écran (NVDA)&nbsp;;</li>
-  <li>le parcours au clavier par une personne, dans plusieurs navigateurs.</li>
+  <li>Chromium&nbsp;159, piloté par Playwright, sous Windows&nbsp;10&nbsp;;</li>
+  <li>lecteur d’écran&nbsp;: vérification prévue avec NVDA.</li>
 </ul>
 
-<h2>Les limites</h2>
-<p>Ces tests ne remplacent pas un audit complet selon le référentiel officiel (RGAA). Ce site n’a pas fait l’objet d’un tel audit.</p>
+<h3>Outils utilisés lors de l’évaluation</h3>
+<ul>
+  <li>axe-core&nbsp;4.14.1, pour le relevé automatique&nbsp;;</li>
+  <li>Playwright, pour le parcours au clavier, l’ordre de tabulation, l’affichage sans feuille de style, l’espacement du texte, le texte agrandi à 200&nbsp;%, l’affichage à 320&nbsp;pixels de large et la mesure des contrastes&nbsp;;</li>
+  <li>le validateur du W3C (Nu Html Checker), pour la validité du code&nbsp;;</li>
+  <li>la lecture du code de chaque page.</li>
+</ul>
 
-<h2>Un problème&nbsp;?</h2>
-<p>Si un élément de ce site vous gêne, écrivez à <span data-contact><span class="adresse-secours">contact, arobase, demarsweb point fr</span></span>&nbsp;: je vous réponds et je corrige.</p>
+<h3>Pages du site ayant fait l’objet de la vérification</h3>
+<ul>
+  <li><a href="/">Accueil</a></li>
+  <li><a href="/avant-apres">Avant / après&nbsp;: une boutique de test</a></li>
+  <li><a href="/articles/">Articles</a></li>
+  <li><a href="/articles/loi-boutiques-en-ligne">Boutiques en ligne&nbsp;: ce que dit la loi depuis le 28 juin 2025</a></li>
+  <li><a href="/articles/six-defauts-courants">Les six défauts qu’on retrouve sur presque toutes les boutiques</a></li>
+  <li><a href="/articles/widget-ne-suffit-pas">Pourquoi un widget ne suffit pas</a></li>
+  <li><a href="/mentions-legales">Mentions légales</a></li>
+  <li><a href="/confidentialite">Confidentialité</a></li>
+  <li><a href="/accessibilite" aria-current="page">Accessibilité</a> (cette page)</li>
+  <li><a href="/plan-du-site">Plan du site</a></li>
+</ul>
+
+<h2>Retour d’information et contact</h2>
+<p>Si vous n’arrivez pas à accéder à un contenu ou à un service, vous pouvez contacter le responsable du site pour être orienté vers une alternative accessible ou obtenir le contenu sous une autre forme. Si un élément de ce site vous gêne, écrivez-moi&nbsp;: je vous réponds et je corrige.</p>
+<ul>
+  <li>Par courriel&nbsp;: <span data-contact><span class="adresse-secours">contact, arobase, demarsweb point fr</span></span>&nbsp;;</li>
+  <li>coordonnées de Demars Web&nbsp;: <a href="/mentions-legales">mentions légales</a>.</li>
+</ul>
+
+<h2>Voies de recours</h2>
+<p>Cette procédure est à utiliser dans le cas suivant&nbsp;: vous avez signalé au responsable du site un défaut d’accessibilité qui vous empêche d’accéder à un contenu ou à un service, et vous n’avez pas obtenu de réponse satisfaisante.</p>
+<ul>
+  <li><a href="https://www.defenseurdesdroits.fr/nous-contacter-355">Écrire un message au Défenseur des droits</a>&nbsp;;</li>
+  <li><a href="https://www.defenseurdesdroits.fr/carte-des-delegues">Contacter le délégué du Défenseur des droits près de chez vous</a>&nbsp;;</li>
+  <li>envoyer un courrier par la poste (gratuit, ne pas mettre de timbre)&nbsp;: Défenseur des droits, Libre réponse 71120, 75342 Paris CEDEX&nbsp;07.</li>
+</ul>
 </main>
 
 <footer class="pied conteneur">
@@ -59,6 +114,7 @@
       <li><a href="/mentions-legales">Mentions légales</a></li>
       <li><a href="/confidentialite">Confidentialité</a></li>
       <li><a href="/accessibilite" aria-current="page">Accessibilité</a></li>
+      <li><a href="/plan-du-site">Plan du site</a></li>
     </ul>
   </nav>
 </footer>
