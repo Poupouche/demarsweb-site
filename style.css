@@ -138,21 +138,28 @@ a:focus-visible,
   outline-offset: 0.1875rem;
 }
 
-/* Lien d'évitement : hors de l'écran tant qu'il n'a pas le focus. */
-.evitement {
-  position: absolute;
-  top: -10rem;
-  left: 1rem;
-  z-index: 2;
-  padding: 0.5rem 0.875rem;
-  background: var(--blanc);
-  color: var(--marine);
-  font-weight: 700;
-  --focus: var(--marine);
+/* Lien d'évitement : toujours visible, dans un bandeau au-dessus de l'en-tête.
+   Caché hors de l'écran, il n'apparaissait pas quand un lecteur d'écran (NVDA) lui donnait le focus
+   sans que le navigateur le marque comme tel. */
+.barre-evitement {
+  background: var(--marine);
+  border-bottom: 0.0625rem solid #1f3a63;
+  font-size: 0.9375rem;
+  --focus: var(--blanc);
 }
 
-.evitement:focus {
-  top: 0.75rem;
+.barre-evitement .conteneur {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+.evitement {
+  color: var(--ciel);
+  font-weight: 700;
+}
+
+.evitement:hover {
+  color: var(--blanc);
 }
 
 /* ---------- En-tête ---------- */
