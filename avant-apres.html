@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Avant / après — Demars Web</title>
+<meta name="description" content="Une boutique PrestaShop de test, avant et après corrections de son accessibilité : chiffres et images.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<div class="fonce">
+  <header class="entete conteneur">
+    <a class="marque" href="index.html">Demars <span>Web</span></a>
+    <nav class="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html#methode">Méthode</a></li>
+        <li><a href="avant-apres.html" aria-current="page">Avant / après</a></li>
+        <li><a href="articles/index.html">Articles</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<main id="contenu" class="page-large conteneur">
+<h1>Avant / après&nbsp;: une boutique de test</h1>
+
+<p>Pour montrer la méthode, je l’ai appliquée à une boutique de test&nbsp;: PrestaShop&nbsp;9.2.1 installée sur mon poste, avec son thème d’origine (Classic) et ses produits de démonstration, sans rien de propre à un marchand. Le parcours d’achat a été relevé en 19 étapes, de l’accueil au compte client, puis corrigé dans un thème à part (un thème enfant), sans toucher au thème d’origine.</p>
+
+<div class="encadre">
+<p><strong>Une vraie boutique est différente.</strong> Son thème, ses modules, ses couleurs et ses textes changent les défauts comme les corrections. Cet exemple montre la méthode&nbsp;; il ne dit pas ce que donnerait votre boutique.</p>
+</div>
+
+<div class="tableau" role="region" aria-labelledby="resultats-titre" tabindex="0">
+<table class="resultats">
+  <caption id="resultats-titre">Résultats avant et après corrections, sur les 19 étapes</caption>
+  <thead>
+    <tr><th scope="col">Mesure</th><th scope="col" class="nombre">Avant</th><th scope="col" class="nombre">Après</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Corrections au relevé automatique</th><td class="nombre">61</td><td class="nombre apres">1</td></tr>
+    <tr><th scope="row">dont bloquantes</th><td class="nombre">5</td><td class="nombre apres">0</td></tr>
+    <tr><th scope="row">Constats au clavier</th><td class="nombre">84</td><td class="nombre apres">0</td></tr>
+    <tr><th scope="row">Achat complet au clavier</th><td class="nombre">13&nbsp;/&nbsp;14</td><td class="nombre apres">14&nbsp;/&nbsp;14</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Ces chiffres viennent d’outils&nbsp;: un relevé automatique, qui ne voit qu’une partie des défauts, et un programme qui parcourt la boutique au clavier. «&nbsp;0&nbsp;» ne veut pas dire qu’il ne reste rien. Après ces corrections, un essai à la main a encore trouvé un défaut que l’outil ne voyait pas (le retour du focus après l’ajout au panier)&nbsp;; il a été corrigé depuis. Aucun lecteur d’écran n’a encore été utilisé sur cette boutique.</p>
+
+<section class="etape" aria-labelledby="etape-1">
+<h2 id="etape-1">1. L’accueil&nbsp;: le carrousel</h2>
+<p>Le carrousel d’images défilait tout seul, sans moyen de l’arrêter. Au clavier, c’était un piège&nbsp;: une fois entré dedans, on n’atteignait plus le reste de la page. Il a maintenant un bouton «&nbsp;Mettre le carrousel en pause&nbsp;», et le clavier le traverse normalement.</p>
+<p>Les pastilles «&nbsp;-20&nbsp;%&nbsp;» et «&nbsp;Neuf&nbsp;», en texte blanc sur orange clair et bleu clair, étaient difficiles à lire&nbsp;: leurs couleurs ont été foncées.</p>
+<div class="images">
+  <figure>
+    <figcaption>Avant</figcaption>
+    <img src="images/accueil-avant.webp" width="760" height="543" alt="Avant : le haut de l’accueil de la boutique de test. Le carrousel n’a aucun bouton de pause. Les pastilles « -20 % » et « Neuf » des produits sont orange clair et bleu clair, avec un texte blanc peu lisible.">
+  </figure>
+  <figure>
+    <figcaption>Après</figcaption>
+    <img src="images/accueil-apres.webp" width="760" height="543" alt="Après : le même écran. Un bouton « Mettre le carrousel en pause » apparaît en haut à droite du carrousel. Les pastilles « -20 % » et « Neuf » sont orange foncé et bleu-vert foncé, et leur texte blanc se lit mieux.">
+  </figure>
+</div>
+</section>
+<section class="etape" aria-labelledby="etape-2">
+<h2 id="etape-2">2. La fiche produit</h2>
+<p>Deux défauts bloquaient l’achat avec un lecteur d’écran. Les boutons «&nbsp;+&nbsp;» et «&nbsp;−&nbsp;» de la quantité n’avaient pas de nom&nbsp;: le lecteur d’écran annonçait «&nbsp;bouton&nbsp;», sans plus. Ils s’appellent maintenant «&nbsp;Augmenter la quantité&nbsp;» et «&nbsp;Diminuer la quantité&nbsp;». Les onglets «&nbsp;Description&nbsp;» et «&nbsp;Détails du produit&nbsp;» étaient mal construits pour les lecteurs d’écran (deux défauts bloquants et un gênant, de même cause)&nbsp;; leur structure a été reprise dans le gabarit de la fiche.</p>
+<p>Au clavier, le bouton «&nbsp;favori&nbsp;» (le cœur) et les pastilles de couleur ne montraient pas où était le focus&nbsp;: ils ont maintenant un contour visible. À l’écran, ce qui change surtout, ce sont le bouton «&nbsp;Ajouter au panier&nbsp;», le prix et les pastilles de réduction, plus foncés pour être lisibles.</p>
+<div class="images">
+  <figure>
+    <figcaption>Avant</figcaption>
+    <img src="images/fiche-produit-avant.webp" width="760" height="692" alt="Avant : la fiche d’un t-shirt. Le bouton « Ajouter au panier » est bleu clair ; le prix réduit et la pastille « Économisez 20 % » sont orange clair. Leurs textes sont peu contrastés.">
+  </figure>
+  <figure>
+    <figcaption>Après</figcaption>
+    <img src="images/fiche-produit-apres.webp" width="760" height="692" alt="Après : la même fiche. Le bouton « Ajouter au panier » est bleu-vert foncé ; le prix et la pastille « Économisez 20 % » sont orange foncé. Les noms donnés aux boutons + et − et la nouvelle structure des onglets ne se voient pas : ils servent au lecteur d’écran.">
+  </figure>
+</div>
+</section>
+<section class="etape" aria-labelledby="etape-3">
+<h2 id="etape-3">3. Le panier</h2>
+<p>Les boutons «&nbsp;+&nbsp;» et «&nbsp;−&nbsp;» du panier avaient le même défaut que ceux de la fiche produit, avec la même cause&nbsp;: le script du thème qui les crée. Une seule correction règle les deux pages. Le bouton «&nbsp;Commander&nbsp;», blanc sur bleu clair, était difficile à lire.</p>
+<p>Juste avant le panier, quand on ajoute un produit, une fenêtre de confirmation s’ouvre. À sa fermeture, le focus ne revenait pas sur le bouton «&nbsp;Ajouter au panier&nbsp;»&nbsp;: la personne au clavier perdait sa place. Il y revient maintenant.</p>
+<div class="images">
+  <figure>
+    <figcaption>Avant</figcaption>
+    <img src="images/panier-avant.webp" width="760" height="339" alt="Avant : le panier, avec un t-shirt. Le bouton « Commander » est blanc sur bleu clair ; la pastille « -20 % » est orange clair.">
+  </figure>
+  <figure>
+    <figcaption>Après</figcaption>
+    <img src="images/panier-apres.webp" width="760" height="339" alt="Après : le même panier. Le bouton « Commander » est blanc sur bleu-vert foncé ; la pastille « -20 % » est orange foncé. Les noms des boutons + et − de la quantité ne se voient pas : ils servent au lecteur d’écran.">
+  </figure>
+</div>
+</section>
+<section class="etape" aria-labelledby="etape-4">
+<h2 id="etape-4">4. La commande</h2>
+<p>Les liens placés dans le texte, comme «&nbsp;Se déconnecter&nbsp;», ne se distinguaient que par leur couleur, un bleu clair&nbsp;: ils sont maintenant soulignés, et plus foncés.</p>
+<p>Dans les formulaires de la commande et du compte, sept champs avaient un message d’erreur ni relié au champ, ni annoncé. Chaque message est maintenant relié à son champ, et le focus va sur le premier champ en erreur. Neuf champs personnels indiquent aussi au navigateur ce qu’ils attendent, pour le remplissage automatique.</p>
+<div class="images">
+  <figure>
+    <figcaption>Avant</figcaption>
+    <img src="images/commande-avant.webp" width="760" height="326" alt="Avant : la première étape de la commande, « Informations personnelles ». Les liens « Camille Parcours » (le client de test) et « Se déconnecter » sont bleu clair, sans soulignement ; le bouton « Continuer » est blanc sur bleu clair.">
+  </figure>
+  <figure>
+    <figcaption>Après</figcaption>
+    <img src="images/commande-apres.webp" width="760" height="326" alt="Après : la même étape. Les deux liens sont soulignés et plus foncés ; le bouton « Continuer » est blanc sur bleu-vert foncé.">
+  </figure>
+</div>
+</section>
+
+<section aria-labelledby="partout">
+<h2 id="partout">Sur toutes les pages</h2>
+<ul>
+  <li>Un lien «&nbsp;Aller au contenu&nbsp;» permet de passer le menu au clavier. Il manquait sur 18 étapes.</li>
+  <li>Le menu des catégories ne s’ouvrait qu’à la souris&nbsp;: c’était la seule action de l’achat impossible au clavier. Il s’ouvre maintenant au clavier, et annonce s’il est ouvert ou fermé.</li>
+  <li>Le focus se voit partout&nbsp;: un contour foncé de 3&nbsp;pixels, bordé de blanc.</li>
+  <li>Trois couleurs de la charte ont été foncées&nbsp;: le gris des textes secondaires, le bleu principal et l’orange des promotions. À elles trois, elles rendaient 579 éléments difficiles à lire.</li>
+</ul>
+</section>
+
+<section aria-labelledby="reste">
+<h2 id="reste">Ce qui reste</h2>
+<ul>
+  <li>Une correction n’est pas faite&nbsp;: la bannière de l’accueil est un lien sans texte. Ce texte s’écrit dans le réglage du module, et c’est au marchand de le choisir.</li>
+  <li>Plusieurs choix reviennent au marchand&nbsp;: les couleurs de sa marque, les textes ajoutés et leurs traductions, l’aspect du focus, le moment de la mise en ligne. Ils lui sont posés sous forme de questions.</li>
+  <li>Dans un panier de plusieurs produits, les boutons «&nbsp;+&nbsp;» et «&nbsp;−&nbsp;» portent le même nom à chaque ligne&nbsp;: c’est à améliorer.</li>
+  <li>Aucun lecteur d’écran n’a encore été utilisé sur cette boutique&nbsp;: c’est la prochaine vérification.</li>
+</ul>
+</section>
+
+<p class="retour">Où en est votre boutique&nbsp;? <a href="index.html#contact">Demander un premier relevé gratuit</a></p>
+</main>
+
+<footer class="pied conteneur">
+  <p>Demars Web <span aria-hidden="true">·</span> Louis Sainrat, entrepreneur individuel</p>
+  <nav aria-label="Informations sur le site">
+    <ul>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+      <li><a href="confidentialite.html">Confidentialité</a></li>
+      <li><a href="accessibilite.html">Accessibilité</a></li>
+    </ul>
+  </nav>
+</footer>
+</body>
+</html>

@@ -1,28 +1,49 @@
 /* Demars Web — feuille de style unique.
-   Thème clair par défaut, thème sombre selon le réglage du système.
-   Aucune police, image ni ressource chargée depuis un autre site. Aucune animation. */
+   D'après la maquette retenue le 18 novembre 2026 (fonds clairs et foncés alternés, pas de thème sombre).
+   Polices hébergées par le site (polices/, SIL Open Font License), polices du système en secours.
+   Rien n'est chargé depuis un autre site. Aucune animation. */
 
-:root {
-  color-scheme: light dark;
-  --fond: #ffffff;
-  --texte: #1b1d21;
-  --doux: #4b5260;
-  --accent: #0b57a4;
-  --sur-accent: #ffffff;
-  --bordure: #d5d9e0;
-  --focus: #1b1d21;
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("polices/AtkinsonHyperlegible-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fond: #14171c;
-    --texte: #eceef1;
-    --doux: #b4bac4;
-    --accent: #8cbcf5;
-    --sur-accent: #14171c;
-    --bordure: #3a404a;
-    --focus: #eceef1;
-  }
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("polices/AtkinsonHyperlegible-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("polices/AtkinsonHyperlegibleMono-wght.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --marine: #0b2545;
+  --ciel: #8ec5ff;
+  --encre: #0f172a;
+  --gris: #334155;
+  --lien: #1d4ed8;
+  --lien-survol: #1e3a8a;
+  --pale: #dce8f7;
+  --pale-sur-marine: #dbe4f0;
+  --blanc: #ffffff;
+  --retire: #fca5a5;
+  --ajoute: #86efac;
+  --texte: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: "Atkinson Hyperlegible Mono", ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+  /* Couleur du contour de focus : foncée sur fond clair, blanche sur fond foncé (voir .fonce). */
+  --focus: var(--marine);
 }
 
 *,
@@ -38,18 +59,81 @@ html {
 
 body {
   margin: 0;
-  background: var(--fond);
-  color: var(--texte);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.0625rem;
+  background: var(--blanc);
+  color: var(--encre);
+  font-family: var(--texte);
+  font-size: 1.1875rem;
   line-height: 1.6;
   overflow-wrap: break-word;
 }
 
-.page {
-  max-width: 42rem;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Zones à fond foncé : texte blanc, contour de focus blanc. */
+.fonce {
+  background: var(--marine);
+  color: var(--blanc);
+  --focus: var(--blanc);
+}
+
+.conteneur {
+  max-width: 70rem;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 40em) {
+  .conteneur {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.visuellement-cache {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Liens : soulignés, pour être reconnus sans la couleur. */
+a {
+  color: var(--lien);
+  text-decoration: underline;
+  text-decoration-thickness: 0.0625em;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--lien-survol);
+  text-decoration-thickness: 0.125em;
+}
+
+.fonce a {
+  color: var(--blanc);
+}
+
+.fonce a:hover {
+  color: var(--blanc);
+}
+
+/* Focus toujours visible : contour de 3 px, de la couleur de la zone. */
+a:focus,
+a:focus-visible,
+[tabindex]:focus,
+[tabindex]:focus-visible {
+  outline: 0.1875rem solid var(--focus);
+  outline-offset: 0.1875rem;
 }
 
 /* Lien d'évitement : hors de l'écran tant qu'il n'a pas le focus. */
@@ -57,75 +141,229 @@ body {
   position: absolute;
   top: -10rem;
   left: 1rem;
-  z-index: 1;
-  padding: 0.5rem 0.75rem;
-  background: var(--fond);
-  color: var(--accent);
+  z-index: 2;
+  padding: 0.5rem 0.875rem;
+  background: var(--blanc);
+  color: var(--marine);
+  font-weight: 700;
+  --focus: var(--marine);
 }
 
 .evitement:focus {
-  top: 0.5rem;
+  top: 0.75rem;
 }
 
-/* Liens : toujours soulignés, pour être reconnus sans la couleur. */
-a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-decoration-thickness: 0.0625em;
-  text-underline-offset: 0.15em;
-}
-
-a:hover {
-  text-decoration-thickness: 0.125em;
-}
-
-/* Focus toujours visible, dans les deux thèmes. */
-a:focus,
-a:focus-visible {
-  outline: 0.1875rem solid var(--focus);
-  outline-offset: 0.125rem;
-}
-
-/* Page en cours : en gras, soulignement épais, et aria-current dans le code. */
-a[aria-current="page"] {
-  font-weight: 700;
-  text-decoration-thickness: 0.15em;
-}
+/* ---------- En-tête ---------- */
 
 .entete {
-  padding: 1.25rem 0 1rem;
-  border-bottom: 0.0625rem solid var(--bordure);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1875rem solid var(--ciel);
 }
 
 .marque {
-  margin: 0;
-  color: var(--doux);
-}
-
-.marque a {
-  color: var(--texte);
   font-weight: 700;
+  font-size: 1.625rem;
+  line-height: 1.2;
+  color: var(--blanc);
+  text-decoration: none;
+}
+
+.fonce .marque:hover {
+  text-decoration: underline;
+}
+
+.marque span {
+  color: var(--ciel);
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   font-size: 1.125rem;
+  font-weight: 700;
 }
 
-main {
-  padding: 2rem 0 2.5rem;
+/* Page en cours : trait épais sous le lien, en plus de aria-current. */
+.menu a[aria-current] {
+  text-decoration-thickness: 0.1875em;
+  text-decoration-color: var(--ciel);
 }
 
-h1,
-h2 {
-  line-height: 1.25;
-  color: var(--texte);
+/* ---------- Accueil : ouverture ---------- */
+
+.ouverture {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
+}
+
+.ouverture-texte {
+  flex: 1 1 32rem;
+  min-width: 0;
+}
+
+.surtitre {
+  margin: 0 0 1rem;
+  font-family: var(--mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ciel);
 }
 
 h1 {
-  margin: 0 0 1.25rem;
-  font-size: 1.875rem;
+  margin: 0 0 1.75rem;
+  font-weight: 700;
+  font-size: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+  line-height: 1.06;
+}
+
+.ouverture h1 span {
+  color: var(--ciel);
+}
+
+.chapo {
+  margin: 0 0 2.25rem;
+  max-width: 34em;
+  font-size: 1.3125rem;
+  color: var(--pale-sur-marine);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.bouton-principal,
+.bouton-secondaire {
+  display: inline-block;
+  max-width: 100%;
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.bouton-principal {
+  padding: 1rem 1.75rem;
+  border: 0.1875rem solid var(--ciel);
+  background: var(--ciel);
+  color: var(--marine);
+}
+
+.fonce .bouton-principal,
+.fonce .bouton-principal:hover {
+  color: var(--marine);
+}
+
+.bouton-secondaire {
+  padding: 0.8125rem 1.5rem;
+  border: 0.1875rem solid var(--ciel);
+  color: var(--blanc);
+}
+
+.bouton-principal:hover,
+.bouton-secondaire:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.125em;
+}
+
+/* Exemple de correction dans le code. */
+.code {
+  flex: 1 1 25rem;
+  min-width: 0;
+  margin: 0;
+  background: var(--encre);
+  color: var(--blanc);
+  border: 0.1875rem solid var(--ciel);
+  font-family: var(--mono);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.code-titre {
+  margin: 0;
+  padding: 0.625rem 1rem;
+  background: var(--ciel);
+  color: var(--marine);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.code-lignes {
+  padding: 1rem;
+}
+
+.code-lignes p {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.code .retire {
+  color: var(--retire);
+}
+
+.code .ajoute {
+  color: var(--ajoute);
+}
+
+.code figcaption {
+  padding: 0.75rem 1rem;
+  border-top: 0.125rem solid var(--gris);
+  font-family: var(--texte);
+  font-size: 1rem;
+  color: var(--pale-sur-marine);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.section-pale {
+  background: var(--pale);
+}
+
+.trait-bas {
+  border-bottom: 0.1875rem solid var(--marine);
+}
+
+.trait-haut {
+  border-top: 0.1875rem solid var(--marine);
 }
 
 h2 {
-  margin: 2.5rem 0 0.75rem;
+  margin: 0 0 2rem;
+  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+  line-height: 1.15;
+  color: var(--marine);
+}
+
+.fonce h2 {
+  color: var(--blanc);
+}
+
+h3 {
+  margin: 0 0 0.5rem;
   font-size: 1.375rem;
+  line-height: 1.25;
 }
 
 p,
@@ -134,73 +372,408 @@ ol {
   margin: 0 0 1rem;
 }
 
-ul,
-ol {
-  padding-left: 1.5rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* Le seul élément mis en avant : le lien vers le premier relevé gratuit. */
-.appel {
-  margin: 1.75rem 0 0.5rem;
-}
-
-.bouton {
-  display: inline-block;
-  padding: 0.75rem 1.25rem;
-  border: 0.125rem solid var(--accent);
-  border-radius: 0.375rem;
-  background: var(--accent);
-  color: var(--sur-accent);
+.mono {
+  font-family: var(--mono);
   font-weight: 700;
-  text-decoration: none;
+  color: var(--lien);
 }
 
-.bouton:hover {
-  text-decoration: underline;
+/* Essayez sur votre boutique */
+.essai {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
-.a-completer {
-  color: var(--doux);
+.essai > div {
+  flex: 1 1 23.75rem;
+  min-width: 0;
 }
 
-.pied {
-  padding: 1.5rem 0 2rem;
-  border-top: 0.0625rem solid var(--bordure);
-  color: var(--doux);
-  font-size: 0.9375rem;
-}
-
-.pied p {
+.essai h2 {
   margin-bottom: 0.75rem;
+  font-size: 2.25rem;
 }
 
-.pied ul {
+kbd {
+  display: inline-block;
+  padding: 0.125rem 0.625rem;
+  background: var(--blanc);
+  color: var(--encre);
+  border: 0.125rem solid var(--marine);
+  border-bottom-width: 0.25rem;
+  border-radius: 0.375rem;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.chiffres {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.125rem;
+}
+
+.chiffres li {
+  padding: 0.75rem 1rem;
+  background: var(--blanc);
+  border: 0.125rem solid var(--marine);
+}
+
+.note {
+  margin: 0.75rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--gris);
+}
+
+/* Cartes */
+.cartes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.pied li {
-  display: inline-block;
-  margin: 0 1rem 0.5rem 0;
+.cartes > li {
+  flex: 1 1 18.75rem;
+  min-width: 0;
+  padding: 1.5rem;
+  border: 0.1875rem solid var(--marine);
 }
 
-@media (min-width: 40em) {
-  .page {
-    padding: 0 1.5rem;
+.cartes .mono {
+  margin: 0 0 0.5rem;
+}
+
+.cartes p:last-child {
+  margin: 0;
+  color: var(--gris);
+}
+
+/* Méthode */
+.etapes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.etapes > li {
+  flex: 1 1 12.5rem;
+  min-width: 0;
+  padding: 1.25rem;
+  background: var(--blanc);
+  color: var(--encre);
+  border: 0.1875rem solid var(--ciel);
+}
+
+.etapes .mono {
+  margin: 0 0 0.375rem;
+}
+
+.etapes p:last-child {
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+/* Tableau avant / après */
+.sous-titre {
+  margin: -1.5rem 0 2rem;
+  color: var(--gris);
+}
+
+.resultats {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1875rem;
+}
+
+.resultats caption {
+  padding: 0 0 0.75rem;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--gris);
+}
+
+.resultats thead tr {
+  background: var(--marine);
+  color: var(--blanc);
+}
+
+/* Le tableau défile dans son cadre seulement s'il ne tient pas (texte très agrandi sur petit écran). */
+.tableau {
+  overflow-x: auto;
+}
+
+.tableau + p {
+  margin-top: 1.5rem;
+}
+
+.resultats th,
+.resultats td {
+  padding: 0.875rem 0.75rem;
+}
+
+.resultats thead th,
+.resultats .nombre {
+  white-space: nowrap;
+}
+
+@media (max-width: 30em) {
+  .resultats {
+    font-size: 1rem;
   }
 
-  h1 {
-    font-size: 2.25rem;
+  .resultats th,
+  .resultats td {
+    padding: 0.75rem 0.5rem;
   }
+}
 
-  main {
-    padding-top: 3rem;
-  }
+.resultats thead th {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  text-align: left;
+}
+
+.resultats .nombre {
+  text-align: right;
+  font-family: var(--mono);
+}
+
+.resultats tbody tr {
+  border-bottom: 0.125rem solid var(--marine);
+}
+
+.resultats tbody tr:nth-child(even) {
+  background: var(--pale);
+}
+
+.resultats tbody th {
+  text-align: left;
+  font-weight: 400;
+}
+
+.resultats .apres {
+  font-weight: 700;
+  color: var(--lien);
+}
+
+.suite {
+  margin: 1.75rem 0 0;
+  font-weight: 700;
+}
+
+/* Liste d'articles */
+.liste-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.3125rem;
+  font-weight: 700;
+}
+
+.liste-articles li {
+  padding: 1.125rem 1.25rem;
+  background: var(--blanc);
+  border: 0.125rem solid var(--marine);
+}
+
+/* Contact */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact > div {
+  flex: 1 1 30rem;
+  min-width: 0;
+}
+
+.contact h2 {
+  margin-bottom: 0.75rem;
+}
+
+.contact p {
+  margin: 0;
+  color: var(--pale-sur-marine);
+}
+
+.contact .contact-bouton {
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  color: var(--blanc);
+}
+
+.contact .bouton-principal {
+  padding: 1.125rem 1.875rem;
+}
+
+/* Texte de secours quand le script ne tourne pas. */
+.adresse-secours {
+  font-weight: 700;
+}
+
+/* ---------- Pages de texte ---------- */
+
+.page-texte {
+  max-width: 46rem;
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+
+.page-texte h1 {
+  color: var(--marine);
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  line-height: 1.12;
+}
+
+.page-texte h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+}
+
+.page-texte ul,
+.page-texte ol {
+  padding-left: 1.5rem;
+}
+
+.page-texte li {
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  color: var(--gris);
+}
+
+.a-completer {
+  color: var(--gris);
+}
+
+.retour {
+  margin-top: 3rem;
+  font-weight: 700;
+}
+
+/* Page avant / après : plus large, pour les images. */
+.page-large {
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+
+.page-large h1 {
+  color: var(--marine);
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  line-height: 1.12;
+}
+
+.page-large > p,
+.page-large .etape > p,
+.page-large .etape > ul,
+.page-large section > p,
+.page-large section > ul {
+  max-width: 46rem;
+}
+
+.page-large h2 {
+  margin: 3.5rem 0 1rem;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+}
+
+.page-large ul {
+  padding-left: 1.5rem;
+}
+
+.page-large li {
+  margin-bottom: 0.5rem;
+}
+
+.encadre {
+  max-width: 46rem;
+  margin: 0 0 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--pale);
+  border-left: 0.375rem solid var(--marine);
+}
+
+.encadre p:last-child {
+  margin: 0;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.images figure {
+  flex: 1 1 22rem;
+  min-width: 0;
+  margin: 0;
+}
+
+.images img {
+  display: block;
+  width: 100%;
+  border: 0.125rem solid var(--marine);
+}
+
+.images figcaption {
+  margin-bottom: 0.5rem;
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--marine);
+}
+
+/* ---------- Pied de page ---------- */
+
+.pied {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  font-size: 1rem;
+  color: var(--gris);
+  border-top: 0.1875rem solid var(--marine);
+}
+
+.pied p {
+  margin: 0;
+}
+
+.pied ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pied a[aria-current] {
+  font-weight: 700;
+  text-decoration-thickness: 0.15em;
 }
 
 /* Aucune animation sur ce site ; par précaution, rien ne bouge si le système demande de réduire les animations. */

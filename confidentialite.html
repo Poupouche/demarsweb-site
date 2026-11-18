@@ -3,44 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <title>Confidentialité — Demars Web</title>
+<meta name="description" content="Données personnelles et confidentialité sur le site demarsweb.fr.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css">
+<script src="contact.js" defer></script>
 </head>
 <body>
 <a class="evitement" href="#contenu">Aller au contenu</a>
-<div class="page">
-<header class="entete">
-  <p class="marque"><a href="index.html">Demars Web</a> <span aria-hidden="true">·</span> accessibilité des boutiques en ligne</p>
-</header>
 
-<main id="contenu">
-  <h1>Vos données personnelles</h1>
+<div class="fonce">
+  <header class="entete conteneur">
+    <a class="marque" href="index.html">Demars <span>Web</span></a>
+    <nav class="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html#methode">Méthode</a></li>
+        <li><a href="avant-apres.html">Avant / après</a></li>
+        <li><a href="articles/index.html">Articles</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
 
-  <h2>Qui est responsable</h2>
-  <p>Louis Sainrat (Demars Web), <a href="mailto:louis@demarsweb.fr">louis@demarsweb.fr</a>.</p>
+<main id="contenu" class="page-texte conteneur">
+<h1>Vos données personnelles</h1>
 
-  <h2>Ce site</h2>
-  <p>Ce site ne dépose aucun cookie, ne mesure pas l’audience et n’a pas de formulaire. Il ne charge rien depuis d’autres sites.</p>
-  <p>Il est hébergé par GitHub (service GitHub Pages), aux États-Unis. Pour la sécurité de son service, GitHub enregistre l’adresse IP des visiteurs dans ses journaux techniques, selon sa propre déclaration de confidentialité. Je n’ai pas accès à ces journaux.</p>
+<h2>Qui est responsable</h2>
+<p>Louis Sainrat (Demars Web), <span data-contact><span class="adresse-secours">contact, arobase, demarsweb point fr</span></span>.</p>
 
-  <h2>Quand vous m’écrivez</h2>
-  <p>Je garde vos messages pour vous répondre et pour suivre notre échange.</p>
+<h2>Ce site</h2>
+<p>Ce site ne dépose aucun cookie, ne mesure pas l’audience et n’a pas de formulaire. Il ne charge rien depuis d’autres sites.</p>
+<p>Il utilise un seul petit script, servi par le site lui-même, qui affiche l’adresse de contact.</p>
+<p>Il est hébergé par GitHub (service GitHub Pages), aux États-Unis. Pour la sécurité de son service, GitHub enregistre l’adresse IP des visiteurs dans ses journaux techniques, selon sa propre déclaration de confidentialité. Je n’ai pas accès à ces journaux.</p>
 
-  <h2>Quand je vous écris le premier</h2>
-  <p>Je contacte des professionnels (agences, développeurs, entreprises) à leur adresse professionnelle, trouvée sur leur site ou sur une page publique. Je le fais au titre de mon intérêt légitime à présenter mon activité, et seulement pour un sujet en lien avec leur métier.</p>
-  <p>Je garde&nbsp;: le nom, la fonction, l’adresse professionnelle, l’entreprise et nos échanges. Ces informations ne sont jamais vendues ni cédées.</p>
+<h2>Quand vous m’écrivez</h2>
+<p>Je garde vos messages pour vous répondre et pour suivre notre échange.</p>
 
-  <h2>Combien de temps</h2>
-  <p>Trois ans après notre dernier échange, puis elles sont supprimées. Si vous me demandez de ne plus vous écrire, je ne garde que votre adresse, pour ne plus vous contacter.</p>
+<h2>Quand je vous écris le premier</h2>
+<p>Je contacte des professionnels (agences, développeurs, entreprises) à leur adresse professionnelle, trouvée sur leur site ou sur une page publique. Je le fais au titre de mon intérêt légitime à présenter mon activité, et seulement pour un sujet en lien avec leur métier.</p>
+<p>Je garde&nbsp;: le nom, la fonction, l’adresse professionnelle, l’entreprise et nos échanges. Ces informations ne sont jamais vendues ni cédées.</p>
 
-  <h2>Vos droits</h2>
-  <p>Vous pouvez demander à voir, corriger ou supprimer vos données, et vous opposer à tout nouveau message&nbsp;: il suffit de répondre «&nbsp;stop&nbsp;» ou d’écrire à <a href="mailto:louis@demarsweb.fr">louis@demarsweb.fr</a>. Vous pouvez aussi adresser une réclamation à la CNIL (<a href="https://www.cnil.fr/">cnil.fr</a>).</p>
+<h2>Combien de temps</h2>
+<p>Trois ans après notre dernier échange, puis elles sont supprimées. Si vous me demandez de ne plus vous écrire, je ne garde que votre adresse, pour ne plus vous contacter.</p>
+
+<h2>Vos droits</h2>
+<p>Vous pouvez demander à voir, corriger ou supprimer vos données, et vous opposer à tout nouveau message&nbsp;: il suffit de répondre «&nbsp;stop&nbsp;» ou d’écrire à <span data-contact><span class="adresse-secours">contact, arobase, demarsweb point fr</span></span>. Vous pouvez aussi adresser une réclamation à la CNIL (<a href="https://www.cnil.fr/">cnil.fr</a>).</p>
 </main>
 
-<footer class="pied">
-  <p>Demars Web <span aria-hidden="true">·</span> Louis Sainrat, entrepreneur individuel <span aria-hidden="true">·</span> <span class="a-completer">[SIREN en cours d’attribution]</span></p>
+<footer class="pied conteneur">
+  <p>Demars Web <span aria-hidden="true">·</span> Louis Sainrat, entrepreneur individuel</p>
   <nav aria-label="Informations sur le site">
     <ul>
       <li><a href="mentions-legales.html">Mentions légales</a></li>
@@ -49,6 +62,5 @@
     </ul>
   </nav>
 </footer>
-</div>
 </body>
 </html>

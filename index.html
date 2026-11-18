@@ -3,62 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <title>Demars Web — accessibilité des boutiques en ligne</title>
+<meta name="description" content="Relevé, corrections dans le code et vérification de l’accessibilité des boutiques en ligne, pour les agences PrestaShop, les développeurs et les marchands.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="style.css">
+<script src="contact.js" defer></script>
 </head>
 <body>
 <a class="evitement" href="#contenu">Aller au contenu</a>
-<div class="page">
-<header class="entete">
-  <p class="marque"><a href="index.html" aria-current="page">Demars Web</a> <span aria-hidden="true">·</span> accessibilité des boutiques en ligne</p>
-</header>
+
+<div class="fonce">
+  <header class="entete conteneur">
+    <a class="marque" href="index.html" aria-current="page">Demars <span>Web</span></a>
+    <nav class="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="avant-apres.html">Avant / après</a></li>
+        <li><a href="articles/index.html">Articles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+    </div>
 
 <main id="contenu">
-  <h1>Des boutiques en ligne que tout le monde peut utiliser</h1>
+  <div class="fonce">
+    <div class="ouverture conteneur">
+      <div class="ouverture-texte">
+        <p class="surtitre">Accessibilité · PrestaShop · thème enfant</p>
+        <h1>L’accessibilité de votre boutique, <span>corrigée dans le code</span></h1>
+        <p class="chapo">Relevé du parcours d’achat, corrections dans un thème à part ou votre dépôt Git, vérification au clavier et au lecteur d’écran. Pas de widget, pas de surcouche.</p>
+        <p class="actions">
+          <a class="bouton-principal" href="#contact">Demander un premier relevé gratuit</a>
+          <a class="bouton-secondaire" href="avant-apres.html">Voir un avant / après</a>
+        </p>
+      </div>
+      <figure class="code">
+        <p class="code-titre">Fiche produit, bouton « + » de la quantité</p>
+        <div class="code-lignes">
+          <p class="retire"><span class="visuellement-cache">Avant : </span>- &lt;button class="bootstrap-touchspin-up"&gt;</p>
+          <p class="ajoute"><span class="visuellement-cache">Après : </span>+ &lt;button class="bootstrap-touchspin-up"</p>
+          <p class="ajoute">+   aria-label="Augmenter la quantité"&gt;</p>
+        </div>
+        <figcaption>Bloquant → corrigé : le lecteur d’écran dit enfin ce que fait le bouton.</figcaption>
+      </figure>
+    </div>
+  </div>
 
-  <p>Depuis le 28&nbsp;juin 2025, une boutique en ligne qui vend à des particuliers doit être utilisable par les personnes handicapées, sauf les toutes petites entreprises.</p>
+  <section class="section-pale trait-bas" aria-labelledby="essai-titre">
+    <div class="essai conteneur">
+      <div>
+        <h2 id="essai-titre">Essayez sur votre boutique</h2>
+        <p>Appuyez sur <kbd>Tab</kbd> plusieurs fois. Voyez-vous toujours où vous êtes&nbsp;? Pouvez-vous ajouter un produit au panier et payer, sans toucher la souris&nbsp;?</p>
+      </div>
+      <div>
+        <ul class="chiffres">
+          <li><strong class="mono">13 sur 17</strong> boutiques avec au moins un défaut bloquant</li>
+          <li><strong class="mono">4 sur 5</strong> sans lien pour passer le menu</li>
+          <li><strong class="mono">26 sur 28</strong> sans déclaration d’accessibilité</li>
+        </ul>
+        <p class="note">Boutiques PrestaShop françaises examinées en novembre 2026&nbsp;: un petit échantillon, et des minimums.</p>
+      </div>
+    </div>
+  </section>
 
-  <p>Demars Web relève les défauts d’accessibilité de votre boutique, les corrige dans le code de son thème, puis vérifie le résultat au clavier et avec un lecteur d’écran.</p>
+  <section class="section conteneur" aria-labelledby="pour-qui">
+    <h2 id="pour-qui">Pour qui</h2>
+    <ul class="cartes">
+      <li>
+        <p class="mono" aria-hidden="true">01</p>
+        <h3>Agences PrestaShop</h3>
+        <p>Sous-traitance&nbsp;: vous gardez vos clients, vos accès et votre nom sur le travail.</p>
+      </li>
+      <li>
+        <p class="mono" aria-hidden="true">02</p>
+        <h3>Développeurs indépendants</h3>
+        <p>Un lot de corrections prêtes à relire, en thème enfant ou par Git.</p>
+      </li>
+      <li>
+        <p class="mono" aria-hidden="true">03</p>
+        <h3>Marchands, 10 salariés et plus</h3>
+        <p>Je travaille avec la personne qui s’occupe de votre site.</p>
+      </li>
+    </ul>
+  </section>
 
-  <p class="appel"><a class="bouton" href="mailto:louis@demarsweb.fr?subject=Relev%C3%A9%20gratuit">Demander un premier relevé gratuit</a></p>
+  <section id="methode" class="fonce" aria-labelledby="methode-titre">
+    <div class="section conteneur">
+      <h2 id="methode-titre">La méthode, en cinq étapes</h2>
+      <ol class="etapes">
+        <li><p class="mono">1 · relevé</p><p>Tout le parcours d’achat&nbsp;: outil automatique, clavier, lecteur d’écran.</p></li>
+        <li><p class="mono">2 · plan</p><p>Défauts classés par gêne&nbsp;; vos décisions posées en questions simples.</p></li>
+        <li><p class="mono">3 · corrections</p><p>Thème à part ou dépôt Git. Rien en ligne sans votre accord.</p></li>
+        <li><p class="mono">4 · vérification</p><p>Achat refait au clavier et au lecteur d’écran, sur une copie.</p></li>
+        <li><p class="mono">5 · bilan</p><p>Avant/après, déclaration d’accessibilité, détail des tests.</p></li>
+      </ol>
+    </div>
+  </section>
 
-  <h2>Pour qui</h2>
-  <ul>
-    <li><strong>Les agences</strong> qui maintiennent des boutiques PrestaShop&nbsp;: je travaille pour vous, en sous-traitance. Vous gardez vos clients et vos accès.</li>
-    <li><strong>Les développeurs indépendants</strong>&nbsp;: je vous livre les corrections, vous les relisez et vous les installez.</li>
-    <li><strong>Les marchands</strong> d’au moins dix salariés&nbsp;: je travaille avec la personne qui s’occupe de votre site.</li>
-  </ul>
-  <p>Le relevé et la surveillance valent pour toutes les plateformes. Les corrections sont proposées pour PrestaShop.</p>
+  <section id="avant-apres" class="section conteneur" aria-labelledby="aa-titre">
+    <h2 id="aa-titre">Avant / après&nbsp;: une boutique de test</h2>
+    <p class="sous-titre">PrestaShop 9.2.1, thème d’origine, 19 étapes d’un achat.</p>
+    <div class="tableau" role="region" aria-labelledby="resultats-titre" tabindex="0">
+    <table class="resultats">
+      <caption id="resultats-titre">Résultats avant et après corrections</caption>
+      <thead>
+        <tr><th scope="col">Mesure</th><th scope="col" class="nombre">Avant</th><th scope="col" class="nombre">Après</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Corrections au relevé automatique</th><td class="nombre">61</td><td class="nombre apres">1</td></tr>
+        <tr><th scope="row">dont bloquantes</th><td class="nombre">5</td><td class="nombre apres">0</td></tr>
+        <tr><th scope="row">Constats au clavier</th><td class="nombre">84</td><td class="nombre apres">0</td></tr>
+        <tr><th scope="row">Achat complet au clavier</th><td class="nombre">13&nbsp;/&nbsp;14</td><td class="nombre apres">14&nbsp;/&nbsp;14</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="suite"><a href="avant-apres.html">Voir l’exemple en détail</a></p>
+  </section>
 
-  <h2>Comment ça se passe</h2>
-  <ol>
-    <li><strong>Le relevé.</strong> Tout le parcours d’achat est examiné&nbsp;: accueil, catégories, fiche produit, panier, commande, compte client. Avec un outil automatique, au clavier et au lecteur d’écran.</li>
-    <li><strong>Le plan.</strong> Chaque défaut est classé selon la gêne qu’il cause. Les points qui demandent votre avis (couleurs de la marque, textes, traductions) vous sont posés sous forme de questions simples.</li>
-    <li><strong>Les corrections.</strong> Elles sont écrites dans un thème à part, ou dans votre dépôt Git. Rien n’est modifié dans la boutique d’origine, et rien n’est mis en ligne sans votre accord.</li>
-    <li><strong>La vérification.</strong> Le parcours d’achat est refait au clavier et au lecteur d’écran, sur une copie de la boutique.</li>
-    <li><strong>Le bilan.</strong> Vous recevez un bilan avant/après, une déclaration d’accessibilité à publier, et le détail des tests.</li>
-  </ol>
-  <p>Ensuite, si vous le souhaitez&nbsp;: une surveillance chaque mois, pour que les mises à jour ne réintroduisent pas de défauts.</p>
+  <section id="articles" class="section-pale trait-haut" aria-labelledby="art-titre">
+    <div class="section conteneur">
+      <h2 id="art-titre">Articles</h2>
+      <ul class="liste-articles">
+        <li><a href="articles/loi-boutiques-en-ligne.html">Boutiques en ligne&nbsp;: ce que dit la loi depuis le 28&nbsp;juin 2025</a></li>
+        <li><a href="articles/six-defauts-courants.html">Les six défauts qu’on retrouve sur presque toutes les boutiques</a></li>
+        <li><a href="articles/widget-ne-suffit-pas.html">Pourquoi un widget ne suffit pas</a></li>
+      </ul>
+    </div>
+  </section>
 
-  <h2>Ce que je ne fais pas</h2>
-  <ul>
-    <li><strong>Pas de widget ni de surcouche.</strong> Ces outils ajoutés par-dessus le site ne corrigent pas son code. Je corrige le code lui-même.</li>
-    <li><strong>Pas de promesse impossible.</strong> Aucun outil ne voit tous les défauts. Le bilan dit ce qui a été vérifié, comment, et ce qui reste à faire.</li>
-    <li><strong>Pas d’accès à vos données clients.</strong> Je travaille sur une copie de la boutique sans les données de vos clients.</li>
-  </ul>
-
-  <h2>Qui suis-je</h2>
-  <p>Je m’appelle Louis Sainrat. <span class="a-completer">[Deux ou trois phrases à écrire par Louis&nbsp;: votre parcours de développeur, depuis quand vous travaillez sur PrestaShop ou le web, pourquoi l’accessibilité.]</span></p>
-
-  <h2>Contact</h2>
-  <p>Écrivez-moi à <a href="mailto:louis@demarsweb.fr"><strong>louis@demarsweb.fr</strong></a>. Je réponds sous deux jours ouvrés.</p>
-  <p class="a-completer">[Téléphone, si Louis le souhaite.]</p>
+  <section id="contact" class="fonce" aria-labelledby="contact-titre">
+    <div class="section contact conteneur">
+      <div>
+        <h2 id="contact-titre">Un premier relevé, gratuit</h2>
+        <p>Trois pages de votre boutique, les trois corrections prioritaires. Réponse sous deux jours ouvrés.</p>
+      </div>
+      <p class="contact-bouton" data-contact data-avant="Écrire à " data-sujet="Relevé gratuit" data-classe="bouton-principal">Écrivez-moi&nbsp;: <span class="adresse-secours">contact, arobase, demarsweb point fr</span></p>
+    </div>
+  </section>
 </main>
 
-<footer class="pied">
-  <p>Demars Web <span aria-hidden="true">·</span> Louis Sainrat, entrepreneur individuel <span aria-hidden="true">·</span> <span class="a-completer">[SIREN en cours d’attribution]</span></p>
+<footer class="pied conteneur">
+  <p>Demars Web <span aria-hidden="true">·</span> Louis Sainrat, entrepreneur individuel</p>
   <nav aria-label="Informations sur le site">
     <ul>
       <li><a href="mentions-legales.html">Mentions légales</a></li>
@@ -67,6 +154,5 @@
     </ul>
   </nav>
 </footer>
-</div>
 </body>
 </html>
