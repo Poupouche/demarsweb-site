@@ -19,7 +19,7 @@
     <nav class="menu" aria-label="Menu principal">
       <ul>
         <li><a href="#methode">Méthode</a></li>
-        <li><a href="/avant-apres">Avant / après</a></li>
+        <li><a href="/avant-apres">Avant et après</a></li>
         <li><a href="/articles/">Articles</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -31,12 +31,12 @@
   <div class="fonce">
     <div class="ouverture conteneur">
       <div class="ouverture-texte">
-        <p class="surtitre">Accessibilité · PrestaShop · thème enfant</p>
+        <p class="surtitre">Accessibilité <span aria-hidden="true">·</span> PrestaShop <span aria-hidden="true">·</span> thème enfant</p>
         <h1>L’accessibilité de votre boutique, <span>corrigée dans le code</span></h1>
         <p class="chapo">Relevé du parcours d’achat, corrections dans un thème à part ou votre dépôt Git, vérification au clavier et au lecteur d’écran. Pas de widget, pas de surcouche.</p>
         <p class="actions">
           <a class="bouton-principal" href="#contact">Demander un premier relevé gratuit</a>
-          <a class="bouton-secondaire" href="/avant-apres">Voir un avant / après</a>
+          <a class="bouton-secondaire" href="/avant-apres">Voir un avant et après</a>
         </p>
       </div>
       <figure class="code">
@@ -46,7 +46,7 @@
           <p class="ajoute"><span class="visuellement-cache">Après : </span>+ &lt;button class="bootstrap-touchspin-up"</p>
           <p class="ajoute">+   aria-label="Augmenter la quantité"&gt;</p>
         </div>
-        <figcaption>Bloquant → corrigé : le lecteur d’écran dit enfin ce que fait le bouton.</figcaption>
+        <figcaption>Bloquant, désormais corrigé : le lecteur d’écran dit enfin ce que fait le bouton.</figcaption>
       </figure>
     </div>
   </div>
@@ -98,7 +98,7 @@
         <li><strong>Corrigez d’abord ce qui bloque un achat</strong>&nbsp;: un bouton sans nom, un formulaire impossible à remplir au clavier, un piège qui retient le focus.</li>
         <li><strong>Publiez une déclaration d’accessibilité honnête</strong>, qui dit ce qui a été vérifié et ce qui reste à faire.</li>
       </ol>
-      <p class="commencer-suite"><a href="#contact">Le premier relevé est gratuit</a> · <a href="/articles/loi-boutiques-en-ligne">Ce que dit la loi, en détail</a></p>
+      <p class="commencer-suite"><a href="#contact">Le premier relevé est gratuit</a> <span aria-hidden="true">·</span> <a href="/articles/loi-boutiques-en-ligne">Ce que dit la loi, en détail</a></p>
     </div>
   </section>
 
@@ -106,17 +106,17 @@
     <div class="section conteneur">
       <h2 id="methode-titre">La méthode, en cinq étapes</h2>
       <ol class="etapes">
-        <li><p class="mono">1 · relevé</p><p>Tout le parcours d’achat&nbsp;: outil automatique, clavier, lecteur d’écran.</p></li>
-        <li><p class="mono">2 · plan</p><p>Défauts classés par gêne&nbsp;; vos décisions posées en questions simples.</p></li>
-        <li><p class="mono">3 · corrections</p><p>Thème à part ou dépôt Git. Rien en ligne sans votre accord.</p></li>
-        <li><p class="mono">4 · vérification</p><p>Achat refait au clavier et au lecteur d’écran, sur une copie.</p></li>
-        <li><p class="mono">5 · bilan</p><p>Avant/après, déclaration d’accessibilité, détail des tests.</p></li>
+        <li><p class="mono">1 <span aria-hidden="true">·</span> relevé</p><p>Tout le parcours d’achat&nbsp;: outil automatique, clavier, lecteur d’écran.</p></li>
+        <li><p class="mono">2 <span aria-hidden="true">·</span> plan</p><p>Défauts classés par gêne&nbsp;; vos décisions posées en questions simples.</p></li>
+        <li><p class="mono">3 <span aria-hidden="true">·</span> corrections</p><p>Thème à part ou dépôt Git. Rien en ligne sans votre accord.</p></li>
+        <li><p class="mono">4 <span aria-hidden="true">·</span> vérification</p><p>Achat refait au clavier et au lecteur d’écran, sur une copie.</p></li>
+        <li><p class="mono">5 <span aria-hidden="true">·</span> bilan</p><p>Avant et après, déclaration d’accessibilité, détail des tests.</p></li>
       </ol>
     </div>
   </section>
 
   <section id="avant-apres" class="section conteneur" aria-labelledby="aa-titre">
-    <h2 id="aa-titre">Avant / après&nbsp;: une boutique de test</h2>
+    <h2 id="aa-titre">Avant et après&nbsp;: une boutique de test</h2>
     <p class="sous-titre">PrestaShop 9.2.1, thème d’origine, 19 étapes d’un achat.</p>
     <div class="tableau" role="region" aria-labelledby="resultats-titre" tabindex="0">
     <table class="resultats">
@@ -128,7 +128,7 @@
         <tr><th scope="row">Corrections au relevé automatique</th><td class="nombre">61</td><td class="nombre apres">1</td></tr>
         <tr><th scope="row">dont bloquantes</th><td class="nombre">5</td><td class="nombre apres">0</td></tr>
         <tr><th scope="row">Constats au clavier</th><td class="nombre">84</td><td class="nombre apres">0</td></tr>
-        <tr><th scope="row">Achat complet au clavier</th><td class="nombre">13&nbsp;/&nbsp;14</td><td class="nombre apres">14&nbsp;/&nbsp;14</td></tr>
+        <tr><th scope="row">Achat complet au clavier</th><td class="nombre">13 sur 14</td><td class="nombre apres">14 sur 14</td></tr>
       </tbody>
     </table>
     </div>
